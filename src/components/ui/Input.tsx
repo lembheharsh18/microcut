@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface InputProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
+  extends Omit<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    "size" | "onDrag" | "onDragStart" | "onDragEnd" | "onDragOver" | "onAnimationStart"
+  > {
   label?: string;
   error?: string;
   hint?: string;
