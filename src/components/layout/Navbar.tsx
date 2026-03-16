@@ -16,12 +16,12 @@ import { Button } from "@/components/ui";
 
 const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
   { label: "Industries", href: "#industries" },
   { label: "Why Us", href: "#why-us" },
   { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 /* ── Component ────────────────────────────────────────────────────── */
@@ -44,15 +44,18 @@ export function Navbar() {
 
   const handleNavClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-      e.preventDefault();
       setMobileOpen(false);
       setActiveHash(href);
 
-      const id = href.replace("#", "");
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (href.startsWith("#")) {
+        e.preventDefault();
+        const id = href.replace("#", "");
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       }
+      // Non-hash links (e.g. "/services") navigate normally
     },
     []
   );
