@@ -168,7 +168,7 @@ export function ServicesSnapshot() {
           className="mt-12 text-center"
         >
           <a
-            href="#services"
+            href="/services"
             className="inline-flex items-center gap-2 text-steel-400 hover:text-steel-300 text-sm font-medium tracking-wide group/link transition-colors duration-200"
           >
             View All Services

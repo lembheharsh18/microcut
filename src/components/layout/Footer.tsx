@@ -8,12 +8,12 @@ import { Linkedin, Youtube, Mail, Phone, MapPin } from "lucide-react";
 /* ── Data ─────────────────────────────────────────────────────────── */
 
 const quickLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
   { label: "Industries", href: "#industries" },
   { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const services = [
@@ -137,7 +137,7 @@ export function Footer() {
             </h4>
             <nav className="flex flex-col gap-0.5">
               {services.map((s) => (
-                <FooterLink key={s} href="#services">
+                <FooterLink key={s} href="/services">
                   {s}
                 </FooterLink>
               ))}
